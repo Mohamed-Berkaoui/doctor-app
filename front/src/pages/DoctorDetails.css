@@ -1,0 +1,351 @@
+/* DoctorDetails.css */
+
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary: #f3f4f6;
+    --accent: #10b981;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    --radius: 1rem;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: #f9fafb;
+    color: var(--text);
+}
+
+.doctor-details {
+    max-width: 480px;
+    margin: 2.5rem auto;
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2rem 2.5rem 2.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.doctor-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 2.25rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.12);
+}
+
+.doctor-name {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.doctor-specialty {
+    display: inline-block;
+    margin-top: 0.25rem;
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.doctor-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.doctor-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.doctor-contact a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.doctor-contact a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.doctor-description {
+    color: var(--text);
+    font-size: 1.05rem;
+    margin: 0;
+    background: var(--secondary);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.doctor-schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.95rem;
+    margin-left: 0.5rem;
+    font-weight: 500;
+}
+
+.days-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.day-badge {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 1.5rem;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-secondary {
+    background: var(--secondary);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(31,41,55,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2rem 2.5rem;
+    min-width: 320px;
+    max-width: 90vw;
+    text-align: center;
+    animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(24px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.loading {
+    text-align: center;
+    color: var(--muted);
+    font-size: 1.25rem;
+    margin-top: 3rem;
+/* ReservationPopUp styles */}
+.reservation-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(31,41,55,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.reservation-modal {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    min-width: 260px;
+    max-width: 370px;
+    top: 25px;
+    width: 100%;
+    text-align: left;
+    animation: fadeIn 0.2s;
+    position: relative;
+}
+
+.reservation-modal h2 {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    color: var(--primary);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.reservation-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.97rem;
+    color: var(--text);
+    font-weight: 500;
+    gap: 0.3rem;
+}
+
+.reservation-form input,
+.reservation-form textarea {
+    border: 1px solid var(--border);
+    border-radius: 0.3rem;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.97rem;
+    font-family: inherit;
+    background: var(--secondary);
+    color: var(--text);
+    transition: border 0.2s;
+    resize: none;
+}
+
+.reservation-form input:focus,
+.reservation-form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #fff;
+}
+
+.reservation-form textarea {
+    min-height: 40px;
+    max-height: 100px;
+}
+
+.reservation-error {
+    color: #dc2626;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 0.3rem;
+    padding: 0.5rem 0.7rem;
+    font-size: 0.97rem;
+    margin-top: 0.3rem;
+    text-align: center;
+}
+
+.reservation-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.7rem;
+    margin-top: 0.7rem;
+}
+
+.reservation-actions button {
+    padding: 0.5rem 1.1rem;
+    border-radius: 0.3rem;
+    border: none;
+    font-size: 0.97rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+}
+
+.reservation-actions button[type="button"] {
+    background: var(--secondary);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.reservation-actions button[type="button"]:hover:not(:disabled) {
+    background: var(--primary);
+    color: #fff;
+}
+
+.reservation-actions button[type="submit"] {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+}
+
+.reservation-actions button[type="submit"]:hover:not(:disabled) {
+    background: var(--primary-hover);
+}
+
+.date-time{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center; 
+    justify-content: space-between;
+}
+.date-time input {
+flex: 1;
+    padding: 0.45rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 0.3rem;
+    font-size: 0.97rem;
+    font-family: inherit;
+    background: var(--secondary);
+    color: var(--text);
+    transition: border 0.2s;
+}
+.reservation-actions button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
